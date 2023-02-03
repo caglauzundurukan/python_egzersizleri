@@ -1,0 +1,16 @@
+def fahrenheit_celcius(temperature, mode):
+  assert mode == "f2c" or mode == "c2f", "Invalid argument!"
+  # Write a statement to convert Fahrenheit to Celsius or Celsius to Fahrenheit
+  if mode == "f2c":
+    conv_temp = (temperature - 32) * 5/9
+  else:
+    conv_temp = (temperature * 9/5) + 32
+  return conv_temp
+  
+### RUN THIS CELL TO TEST YOUR IMPLEMENTATION
+assert math.isclose(fahrenheit_celcius(98.6, "f2c"), 37.0, abs_tol=1e-5), "Test failed for mode \"f2c\"!"
+assert math.isclose(fahrenheit_celcius(42, "c2f"), 107.6, abs_tol=1e-5), "Test failed for mode \"c2f\"!"
+print("Test passed!")
+
+#Call the function to convert 88° Fahrenheit to Celsius
+fahrenheit_celcius(88, "f2c")
