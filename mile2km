@@ -1,0 +1,17 @@
+def mile2km(miles):
+  #Write a function to convert miles to kilometers 
+  km = miles * 1.60934
+  return km
+
+def km2mile(km):
+  #Write a function to convert kilometers to miles
+  miles = km / 1.60934
+  return miles
+  
+### RUN THIS CELL TO TEST YOUR IMPLEMENTATION
+assert math.isclose(mile2km(132.2), 212.754748, abs_tol=1e-5), "Test failed for mile2km!"
+assert math.isclose(km2mile(48.44), 30.099295, abs_tol=1e-5), "Test failed for km2mile!"
+print("Test passed!")
+
+#Call the mile2km function to convert 12 miles
+mile2km(12)
