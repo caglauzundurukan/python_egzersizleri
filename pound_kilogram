@@ -1,0 +1,20 @@
+def pound_kilogram(quantity, mode):
+  assert mode == "pound2kg" or mode == "kg2pound", "Invalid argument!"
+  #Here the assert command ensures that a valid mode is given as argument.
+  
+  if mode == "pound2kg":
+    #write a statement to convert pound to kilogram for mode "pound2kg"
+    conv_quan = quantity * 0.45359
+
+    #Else it should convert kilogram to pound
+  else:
+    conv_quan = quantity / 0.45359
+  return conv_quan
+  
+### RUN THIS CELL TO TEST YOUR IMPLEMENTATION
+assert math.isclose(pound_kilogram(2.20462, "pound2kg"), 1, abs_tol=1e-5), "Test failed for mode \"pound2kg\"!"
+assert math.isclose(pound_kilogram(43, "kg2pound"), 94.79926, abs_tol=1e-5), "Test failed for mode \"kg2pound\"!"
+print("Test passed!")
+
+#Call the function to convert 2 kilograms to pound
+pound_kilogram(2, "kg2pound")
