@@ -1,0 +1,41 @@
+#define the HealtInsurance class - class olustur
+class HealthInsurance:
+    #initialize the object's attributes - nesnenin niteliklerini baslat
+    def __init__(self, company_name, foundation_year, founder_name, company_slogan, run_of_employees, num_of_clients):
+        self.company_name = company_name
+        self.foundation_year = foundation_year
+        self.founder_name = founder_name
+        self.company_slogan = company_slogan
+        self.run_of_employees = run_of_employees
+        self.num_of_clients = num_of_clients
+        
+    #define the print_report method - classin icinde oldugu icin metod denir
+    def print_report(self):
+        print(f'''The company {self.company_name} was founded in {self.foundation_year}, The founder of the company is {self.founder_name},
+        Company Slogan: {self.company_slogan}
+        Number of employees = {self.run_of_employees}
+        Number of clients = {self.num_of_clients}
+        ''')
+        
+    #define the sup_health_insurance method
+    def sup_health_insurance(self, age, chronic_disease, income):
+        if age >= 60 and chronic_disease == True and income <= 6000:
+            print('We are sorry! You are not eligible for supplemental health insurance.')
+        elif age < 60 and income >= 6000 or chronic_disease == False:
+            print('Congratulations! You can get suppplemental health insurance.')
+    #define the update_num_clients methoh
+    def update_num_clients(self, new_number):
+        self.num_of_clients = new_number
+        print(f'Number of clients has been changed to {self.num_of_clients}')
+    
+#create the object HI_company1 with its attributes 
+HI_company1 = HealthInsurance('Healthy', 2012, 'Bob Mayer', 'We care for you', 3500, 13230)   
+
+#use the sup_health_insurance for the new customer
+HI_company1.sup_health_insurance(45, False, 5000)
+
+#update the number of clients
+HI_company1.update_num_clients(13231)
+ 
+#call the print_report method for HI_company1
+HI_company1.print_report()
