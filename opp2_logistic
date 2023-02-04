@@ -1,4 +1,4 @@
-#define the HealtInsurance class - class olustur
+#define the class - class olustur
 class logistic:
     #initialize the object's attributes - nesnenin niteliklerini baslat
     def __init__(self, company_name, foundation_year, founder_name, company_slogan, inventory_space):
