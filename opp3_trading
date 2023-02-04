@@ -1,0 +1,39 @@
+#define the class - class olustur
+class trading:
+    #initialize the object's attributes - nesnenin niteliklerini baslat
+    def __init__(self, company_name, foundation_year, founder_name, company_slogan, sales, expenses, revenue):
+        self.company_name = company_name
+        self.foundation_year = foundation_year
+        self.founder_name = founder_name
+        self.company_slogan = company_slogan
+        self.sales = sales
+        self.expenses = expenses
+        self.revenue = revenue
+        
+    #define the print_report method - classin icinde oldugu icin metod denir
+    def print_report(self):
+        print(f'''The company {self.company_name} was founded in {self.foundation_year}, The founder of the company is {self.founder_name},
+        Company Slogan: {self.company_slogan}
+        Sales: {self.sales}
+        Expenses: {self.expenses}
+        Revenue: {self.revenue}
+        ''')
+        
+    #define the update_sales_and_expenses method
+    def sales_and_expenses(self, new_sales,new_expenses):
+        self.sales += new_sales
+        self.expenses += new_expenses
+        print(f'sales and expenses are updated!')
+        
+    #define the calculate_revenue method
+    def calculate_revenue(self):
+        self.revenue = self.sales - self.expenses
+        print(f'The revenue of the company is: {self.revenue}')
+    
+
+#create the object trading_company1 with its attributes
+trading_company1 = trading('tracom', 2005, 'Chong Wu', 'we revolutionize trading', 500, 200, 300)
+
+trading_company1.sales_and_expenses(100,50)
+trading_company1.calculate_revenue()
+trading_company1.print_report()
